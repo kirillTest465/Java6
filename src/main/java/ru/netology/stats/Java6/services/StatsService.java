@@ -28,21 +28,11 @@ public class StatsService {
         return maxMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int averageSales(int[] sales) {
 
-        int sum = 0;                                // Сумма всех продаж
-        for (int i = 0; i < sales.length; i++) {
 
-            sum = sum + sales[i];                   // Складываем все числа нашего массива
+    public long allSales(int[] sales) {
 
-        }
-        sum = sum / sales.length;                  // Делим сумму всех продаж на количесво чисел в нашем массиве
-        return sum;
-    }
-
-    public int allSales(int[] sales) {
-
-        int sum = 0;                                  // Сумма все продаж
+        long sum = 0;                                  // Сумма все продаж
         for (int i = 0; i < sales.length; i++) {
 
             sum = sum + sales[i];                     // Складываем все числа нашего массива
@@ -51,14 +41,21 @@ public class StatsService {
         return sum;                                  // Возвращаем сумму всех продаж
     }
 
-    public int monthLowSales(int[] sales) {
 
-        int sum = 0;                                   // Сумма всех продаж
-        for (int i = 0; i < sales.length; i++) {
+    public long averageSales(int[] sales) {
 
-            sum = sum + sales[i];                     // Складываем все числа нашего массива
-        }
-        sum = sum / sales.length;                    // Делим сумму всех продаж на количесво чисел в нашем массиве
+        long sum = allSales(sales);       // Сумма всех продаж// Складываем все числа нашего массива
+
+
+        sum = sum / sales.length;                  // Делим сумму всех продаж на количесво чисел в нашем массиве
+        return sum;
+    }
+
+
+
+    public long monthLowSales(int[] sales) {
+
+        long sum = averageSales(sales);
 
 
         // вычесление среднего значения продаж
@@ -75,14 +72,9 @@ public class StatsService {
     }
 
 
-    public int monthHighSales(int[] sales) {
+    public long monthHighSales(int[] sales) {
 
-        int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-
-            sum = sum + sales[i];
-        }
-        sum = sum / sales.length;
+        long sum = averageSales(sales);
 
         // вычесление среднего значения продаж
 

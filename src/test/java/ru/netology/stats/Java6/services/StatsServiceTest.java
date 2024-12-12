@@ -11,7 +11,7 @@ public class StatsServiceTest {
         int[] monthlySalesArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 180;
-        int actual = service.allSales(monthlySalesArray);
+        long actual = service.allSales(monthlySalesArray);
 
         Assertions.assertEquals(expected,actual);
 
@@ -23,7 +23,7 @@ public class StatsServiceTest {
         int[] monthlySalesArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 15;
-        int actual = service.averageSales(monthlySalesArray);
+        long actual = service.averageSales(monthlySalesArray);
 
         Assertions.assertEquals(expected,actual);
 
@@ -57,7 +57,7 @@ public class StatsServiceTest {
         int[] monthlySalesArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.monthHighSales(monthlySalesArray);
+        long actual = service.monthHighSales(monthlySalesArray);
 
         Assertions.assertEquals(expected,actual);
     }
@@ -68,7 +68,7 @@ public class StatsServiceTest {
         int[] monthlySalesArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.monthLowSales(monthlySalesArray);
+        long actual = service.monthLowSales(monthlySalesArray);
 
         Assertions.assertEquals(expected,actual);
     }
