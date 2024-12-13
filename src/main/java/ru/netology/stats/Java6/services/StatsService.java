@@ -3,7 +3,7 @@ package ru.netology.stats.Java6.services;
 public class StatsService {
 
 
-    public int minSales(int[] sales) {
+    public long minSales(long[] sales) {
 
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренными ранее
 
@@ -16,7 +16,7 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int maxSales(int[] sales) {
+    public long maxSales(long[] sales) {
         int maxMonth = 0; // номер месяца с максимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -30,7 +30,7 @@ public class StatsService {
 
 
 
-    public long allSales(int[] sales) {
+    public long allSales(long[] sales) {
 
         long sum = 0;                                  // Сумма все продаж
         for (int i = 0; i < sales.length; i++) {
@@ -42,7 +42,7 @@ public class StatsService {
     }
 
 
-    public long averageSales(int[] sales) {
+    public long averageSales(long[] sales) {
 
         long sum = allSales(sales);       // Сумма всех продаж// Складываем все числа нашего массива
 
@@ -53,7 +53,7 @@ public class StatsService {
 
 
 
-    public long monthLowSales(int[] sales) {
+    public long monthLowSales(long[] sales) {
 
         long sum = averageSales(sales);
 
@@ -72,7 +72,7 @@ public class StatsService {
     }
 
 
-    public long monthHighSales(int[] sales) {
+    public long monthHighSales(long[] sales) {
 
         long sum = averageSales(sales);
 
